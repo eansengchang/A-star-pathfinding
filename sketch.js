@@ -38,9 +38,9 @@ function Spot(i, j) {
 
 	this.show = function (col) {
 		fill(col);
-		noStroke();
+		noStroke()
 		if (this.wall) {
-			fill(50)
+			fill(0)
 		}
 		rect(this.i * w, this.j * h, w - 1, h - 1)
 	}
@@ -61,7 +61,6 @@ function Spot(i, j) {
 
 function setup() {
 	createCanvas(1000, 600);
-
 	w = width / cols;
 	h = height / rows;
 
@@ -219,7 +218,7 @@ function draw() {
 	//everything is white first
 	for (let i = 0; i < cols; i++) {
 		for (let j = 0; j < rows; j++) {
-			grid[i][j].show(color(255));
+			grid[i][j].show(color(70,70,110));
 		}
 	}
 
