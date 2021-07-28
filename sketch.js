@@ -156,7 +156,7 @@ function draw() {
 				let topBoundary = grid[i][j].i*w
 				let botBoundary = grid[i][j].i*w+w
 
-				if(leftBoundary - 3 < mouseY && mouseY < rightBoundary + 3 && topBoundary - 3 < mouseX && mouseX < botBoundary + 3){
+				if(leftBoundary - 2 < mouseY && mouseY < rightBoundary + 2 && topBoundary - 2 < mouseX && mouseX < botBoundary + 2){
 					grid[i][j].wall = true
 				}
 			}
