@@ -38,11 +38,13 @@ function Spot(i, j) {
 
 	this.show = function (col) {
 		fill(col);
-		noStroke()
+		strokeWeight(0);
+		stroke(color(255, 255, 255))
+		noStroke();
 		if (this.wall) {
 			fill(0)
 		}
-		rect(this.i * w, this.j * h, w - 1, h - 1)
+		rect(this.i * w+1, this.j * h+1, w - 1, h - 1)
 	}
 
 	this.addNeighbors = function (grid) {
@@ -60,7 +62,8 @@ function Spot(i, j) {
 }
 
 function setup() {
-	createCanvas(1000, 600);
+	let cnv = createCanvas(1000, 600);
+	cnv.style('display', 'block');
 	w = width / cols;
 	h = height / rows;
 
@@ -82,15 +85,18 @@ function setup() {
 
 	randomizeButton = createButton('Randomize Walls');
 	randomizeButton.mousePressed(randomize);
+	randomizeButton.size(333, 100)
+	randomizeButton.style("font-size: large;")
 
 	clearButton = createButton('Clear Walls');
 	clearButton.mousePressed(clearWalls);
-
-	// resetButton = createButton('Reset Search');
-	// resetButton.mousePressed(reset);
+	clearButton.size(333, 100)
+	clearButton.style("font-size: large;")
 
 	startButton = createButton('Start Search');
 	startButton.mousePressed(start);
+	startButton.size(333, 100)
+	startButton.style("font-size: large;")
 
 	reset();
 }
@@ -218,7 +224,7 @@ function draw() {
 	//everything is white first
 	for (let i = 0; i < cols; i++) {
 		for (let j = 0; j < rows; j++) {
-			grid[i][j].show(color(70,70,110));
+			grid[i][j].show(color(52,50,100));
 		}
 	}
 
